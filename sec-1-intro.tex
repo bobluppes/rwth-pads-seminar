@@ -1,7 +1,7 @@
 \section{Introduction}
 \label{sec:introduction} 
 
-Enterprises collect large volumes of logged process data from enterprise application software
+Companies collect large volumes of logged process data from enterprise application software
 such as ERP (Enterprise Resource Planning), CRM (Customer Relationship Management),
 or SCM (Supply Chain Management) systems. Process data is among the most
 valuable assets of a company as it can provide answers to critical business
@@ -16,8 +16,8 @@ language for translating business questions into executable queries over process
 Although process data is a good fit for the relational model, SQL unfortunately is not well suited for process mining for the following reasons:
 
 \begin{itemize}
-\item \textbf{Usability}: Expressing process mining business questions in SQL is tricky and cumbersome
-\item \textbf{Performance}: State-of-the-art query optimizers generate poor plans for these complex SQL queries
+\item \textbf{Usability}: Expressing process mining business questions in SQL is tricky and cumbersome.
+\item \textbf{Performance}: State-of-the-art query optimizers generate poor plans for these complex SQL queries.
 \end{itemize}
 
 At Celonis, we decided to depart from SQL and develop a new solution tailored
@@ -30,7 +30,7 @@ Saola is highly optimized for drill downs~\cite{drill-down} that
 analyze large data sets with hundreds of millions of events in an interactive
 fashion. Interactive speed is critical as slow response times
 may interrupt a users' train of thought and adversely affect the user
-experience. Thus, SaolaDB was designed to process Celonis PQL efficiently.
+experience. Thus, Saola was designed to process Celonis PQL efficiently.
 
 Besides performance, customers request a system that is easy to setup and maintain. They are reluctant to add yet another database into their IT landscape that must be administrated at high costs. Therefore, Saola was also designed to be usable out-of-the-box without requiring workload-specific fine-tuning by a database administrator.
 
