@@ -49,7 +49,7 @@ void count_alphabet(const alphabet_vec& av){
 
 int main() {
   try {
-    const auto av{make_filled_alphabet_vec(10)};
+    const auto av{make_filled_alphabet_vec(10000)};
     count_alphabet(av);
   } catch (...) {
     std::cerr << "Failure!" << std::endl;
