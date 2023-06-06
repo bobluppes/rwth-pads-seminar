@@ -60,9 +60,3 @@ int main() {
   std::cout << "Success!" << std::endl;
   return EXIT_SUCCESS;
 }
-
-
-
-
-
-
