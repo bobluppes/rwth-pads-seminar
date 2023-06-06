@@ -35,7 +35,10 @@ enum alphabet {
 };
 
 [[nodiscard]] int to_code(const alphabet a) { return static_cast<int>(a); }
-[[nodiscard]] alphabet to_alphabet(const int c) { return static_cast<alphabet>(c); }
+[[nodiscard]] alphabet to_alphabet(const int c) { 
+  if (A <= c && c <= Z) return static_cast<alphabet>(c); 
+  throw c;
+}
 
 using alphabet_vec = std::vector<alphabet>;
 
@@ -54,7 +57,6 @@ void print_alphabet_vec(const alphabet_vec& av) { std::for_each(av.begin(), av.e
     for (size_t run{0}; run < number_of_random_values; ++run) {
 	const auto random_alphabet_code{dist(rng)};
 	result.push_back(to_alphabet(random_alphabet_code));
-	assert((0 <= random_alphabet_code && random_alphabet_code < END));
     }
     // print_alphabet_vec(result);
     return result;
