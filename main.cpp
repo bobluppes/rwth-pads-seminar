@@ -23,7 +23,7 @@ using alphabet_vec = std::vector<alphabet>;
 
 void print_alphabet_vec(const alphabet_vec& av) { std::for_each(av.begin(), av.end(), [](auto a){ std::cout << to_code(a) << ' '; }); std::cout << std::endl; }
 
-[[nodiscard]] alphabet_vec make_filled_alphabet_vec(const size_t number_of_random_values){
+[[nodiscard]] alphabet_vec make_filled_alphabet_vec_with_extra_random_values(const size_t number_of_random_values){
     alphabet_vec result{};
     result.reserve(Z + number_of_random_values);
     for (int alphabet_code{0}; alphabet_code < END; ++alphabet_code) {
@@ -51,7 +51,7 @@ void count_alphabet(const alphabet_vec& av){
 
 int main() {
   try {
-    const auto av{make_filled_alphabet_vec(10000)};
+    const auto av{make_filled_alphabet_vec_with_extra_random_values(10000)};
     count_alphabet(av);
   } catch (...) {
     std::cerr << "Failure!" << std::endl;
