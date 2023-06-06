@@ -49,11 +49,11 @@ void print_alphabet_vec(const alphabet_vec& av) { std::for_each(av.begin(), av.e
     alphabet_vec result{};
     result.reserve(Z + number_of_random_values);
     for (int alphabet_code{0}; alphabet_code < END; ++alphabet_code) {
-	result.push_back(static_cast<alphabet>(alphabet_code));
+	result.push_back(to_alphabet(alphabet_code));
     }
     for (size_t run{0}; run < number_of_random_values; ++run) {
 	const auto random_alphabet_code{dist(rng)};
-	result.push_back(static_cast<alphabet>(random_alphabet_code));
+	result.push_back(to_alphabet(random_alphabet_code));
 	assert((0 <= random_alphabet_code && random_alphabet_code < END));
     }
     // print_alphabet_vec(result);
