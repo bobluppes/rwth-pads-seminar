@@ -1,0 +1,43 @@
+\section{Introduction}
+\label{sec:introduction} 
+
+Companies collect large volumes of logged process data from enterprise application software
+such as ERP (Enterprise Resource Planning), CRM (Customer Relationship Management),
+or SCM (Supply Chain Management) systems. Process data is among the most
+valuable assets of a company as it can provide answers to critical business
+questions like ``What do the processes in our company look like?", ``Where are
+our processes inefficient?'', or ``How can our processes be improved?''. Process
+mining~\cite{process-mining} analyzes process data to answer these questions.
+This allows enterprises to get a fact-based view on the performance of their
+business, to pinpoint inefficiencies, and to counteract on them.
+
+A key success factor for any process mining tool is a suitable query
+language for translating business questions into executable queries over process data. 
+Although process data is a good fit for the relational model, SQL unfortunately is not well suited for process mining for the following reasons:
+
+\begin{itemize}
+\item \textbf{Usability}: Expressing process mining business questions in SQL is tricky and cumbersome.
+\item \textbf{Performance}: State-of-the-art query optimizers generate poor plans for these complex SQL queries.
+\end{itemize}
+
+At Celonis, we decided to depart from SQL and develop a new solution tailored
+towards the needs of process mining. In particular, we designed \emph{Celonis PQL}, a novel query language for process mining, and we developed \emph{Saola}, a highly efficient database system to process Celonis PQL. 
+
+Celonis PQL is the basis for a commercial product that delivers business
+intelligence by interactive process mining. Saola must therefore meet high 
+standards in terms of runtime performance, scalability, and latency. 
+Saola is highly optimized for drill downs~\cite{drill-down} that
+analyze large data sets with hundreds of millions of events in an interactive
+fashion. Interactive speed is critical as slow response times
+may interrupt a users' train of thought and adversely affect the user
+experience. Thus, Saola was designed to process Celonis PQL efficiently.
+
+Besides performance, customers request a system that is easy to setup and maintain. They are reluctant to add yet another database into their IT landscape that must be administrated at high costs. Therefore, Saola was also designed to be usable out-of-the-box without requiring workload-specific fine-tuning by a database administrator.
+
+\par\smallskip\noindent \textbf{Outline.} The remainder of the paper is
+structured as follows: Section~\ref{sec:preliminaries} provides background
+information on process mining. Section~\ref{sec:celonis-pql} introduces Celonis
+PQL, our novel process mining query language, and highlights the main
+differences to SQL. Section~\ref{sec:pql-query-engine} introduces our query
+engine, Saola, which we evaluate in Section~\ref{sec:evaluation}. We finally
+conclude in Section~\ref{sec:conclusion}.
